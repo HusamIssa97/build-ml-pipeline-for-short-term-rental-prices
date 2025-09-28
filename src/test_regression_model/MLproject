@@ -1,0 +1,9 @@
+name: test_regression_model
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+      mlflow_model: {type: str}
+      test_dataset: {type: str}
+    command: "python run.py --mlflow_model {mlflow_model} --test_dataset {test_dataset}"

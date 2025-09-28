@@ -1,0 +1,11 @@
+name: train_val_test_split
+conda_env: conda.yml
+
+entry_points:
+  main:
+    parameters:
+      input: {type: str}
+      test_size: {type: float}
+      random_seed: {type: int, default: 42}
+      stratify_by: {type: str, default: "none"}
+    command: "python run.py --input {input} --test_size {test_size} --random_seed {random_seed} --stratify_by {stratify_by}"
